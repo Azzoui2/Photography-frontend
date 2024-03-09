@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AppAngular": {
+    "digital-banking-web": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-angular",
+            "outputPath": "dist/digital-banking-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
-            "scripts": []
+            "scripts": [ "node_modules/bootstrap/dist/js/bootstrap.bundle.js"]
           },
           "configurations": {
             "production": {
@@ -60,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AppAngular:build:production"
+              "browserTarget": "digital-banking-web:build:production"
             },
             "development": {
-              "browserTarget": "AppAngular:build:development"
+              "browserTarget": "digital-banking-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AppAngular:build"
+            "browserTarget": "digital-banking-web:build"
           }
         },
         "test": {
@@ -96,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "35dce586-412a-4312-89d5-25d087991f68"
+    "analytics": "234e9903-51bc-46d0-b55f-4bb7a908ea85"
   }
 }
