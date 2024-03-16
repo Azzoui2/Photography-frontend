@@ -1,1 +1,26 @@
-<p>reservation works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Finie</th>
+        <th>Admin ID</th>
+        <th>Client ID</th>
+        <th>Date</th>
+        <th>Personne ID</th>
+        <th>Photographe ID</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let res of reservation">
+        <td>{{ res.id }}</td>
+        <td>{{ res.finie }}</td>
+        <td>{{ res.admin_id }}</td>
+        <td>{{ res.client_id }}</td>
+        <td>{{ res.date }}</td>
+        <td>{{ res.personne_id }}</td>
+        <td>{{ res.photographe_id }}</td>
+        <td>{{ res.type }}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Disponibilité</th>
+      <th>Date d'embauche</th>
+      <th>Date de réservation</th>
+      <th>Type</th>
+      <th>Adresse</th>
+      <th>Mot de passe</th>
+      <th>Prénom</th>
+      <th>Rôle</th>
+      <th>Téléphone</th>
+      <!-- Add more table headers as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of personne">
+      <td>{{ person.id }}</td>
+      <td>{{ person.nom }}</td>
+      <td>{{ person.email }}</td>
+      <td>{{ person.disponibilite }}</td>
+      <td>{{ person.date_embauche }}</td>
+      <td>{{ person.date_res }}</td>
+      <td>{{ person.dtype }}</td>
+      <td>{{ person.adresse }}</td>
+      <td>{{ person.mot_de_passe }}</td>
+      <td>{{ person.prenom }}</td>
+      <td>{{ person.role }}</td>
+      <td>{{ person.telephone }}</td>
+      <!-- Add more table cells for additional properties -->
+    </tr>
+  </tbody>
+</table>
