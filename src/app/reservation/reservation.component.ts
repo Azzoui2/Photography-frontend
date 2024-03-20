@@ -13,7 +13,7 @@ export class ReservationComponent  implements OnInit{
   reservation : any
   ngOnInit(): void {
 
-this.Http.get("http://localhost:8080/reservation").subscribe(
+this.Http.get("http://localhost:8082/reservation").subscribe(
   (data) => { this.reservation=data;
    
   },

@@ -15,7 +15,7 @@ export class SpecialitesComponent  implements OnInit{
   specialites : any
   ngOnInit(): void {
 
-this.Http.get("http://localhost:8080/specialites").subscribe(
+this.Http.get("http://localhost:8082/specialites").subscribe(
   (data) => { this.specialites=data;
    
   },

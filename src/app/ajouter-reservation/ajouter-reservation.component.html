@@ -1,0 +1,12 @@
+<form [formGroup]="NewReservationFormGroup" (ngSubmit)="ajouterReservation()">
+    <input type="date" formControlName="date" placeholder="Date">
+    <select formControlName="type">
+      <option value="EN_ATTENTE">En Attente</option>
+      <option value="CONFIRMEE">Confirmée</option>
+      <option value="ANNULEE">Annulée</option>
+    </select>
+    <label><input type="checkbox" formControlName="finie"> Terminée</label>
+    <!-- Ajoutez d'autres champs pour les autres informations de la réservation -->
+    <button type="submit">Ajouter Réservation</button>
+  </form>
+  

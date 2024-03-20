@@ -7,11 +7,12 @@ import { ProduitComponent } from './produit/produit.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PersonneComponent } from './personne/personne.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonnesComponent } from './personnes/personnes.component';
 import { SpecialitesComponent } from './specialites/specialites.component';
 import { HttpClientModule } from '@angular/common/http';
-
+ import { AjouterClientComponent } from './ajouter-client/ajouter-client.component';
+import { AjouterReservationComponent } from './ajouter-reservation/ajouter-reservation.component';
  
 @NgModule({
   declarations: [
@@ -21,11 +22,20 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     PersonneComponent,
     PersonnesComponent,
-    SpecialitesComponent
+    SpecialitesComponent,
+    AjouterClientComponent,
+    AjouterReservationComponent
+     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,HttpClientModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule,FormsModule
+     ,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,7 +11,7 @@ export class PersonnesComponent  implements OnInit{
   personne : any
   ngOnInit(): void {
 
-this.Http.get("http://localhost:8080/personnes").subscribe(
+this.Http.get("http://localhost:8082/personnes").subscribe(
   (data) => { this.personne=data;
    
   },
