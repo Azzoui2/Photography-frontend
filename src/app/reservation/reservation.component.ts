@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { Reservation } from '../model/reservation.model';
+import { ReservationService } from '../services/reservation.service';
 
 @Component({
   selector: 'app-reservation',
@@ -9,8 +12,9 @@ import { Component, OnInit } from '@angular/core';
  
 
 export class ReservationComponent  implements OnInit{
-  constructor (private Http: HttpClient){} // obligatoir d'ajoute  HttpClientModule dana app module dans imprtes
+  constructor (private Http: HttpClient , private var_ReservationService : ReservationService ){} // obligatoir d'ajoute  HttpClientModule dana app module dans imprtes
   reservation : any
+  private apiUrl = 'http://localhost:8082/reservation';
   ngOnInit(): void {
 
 this.Http.get("http://localhost:8082/reservation").subscribe(
@@ -24,7 +28,45 @@ this.Http.get("http://localhost:8082/reservation").subscribe(
 
       
   }
+  // Méthode pour récupérer toutes les réservations
+  getReservations(): Observable<any[]> {
+    return this.Http.get<any[]>(this.apiUrl);
+  }
 
+  // Méthode pour supprimer une réservation par son ID
+ 
+  deleteReservation(res: Reservation) {
+    const confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer cette réservation ?");
+    if (confirmDelete) {
+      this.var_ReservationService.deleteReservation(res.id).subscribe({
+        next: () => {
+          // Supprimer la réservation de la liste
+          this.reservation = this.reservation.filter((item: Reservation) => item.id !== res.id);
+        },
+        error: (err) => {
+          console.log(err);
+          alert("Une erreur s'est produite lors de la suppression de la réservation.");
+        }
+      });
+    }
+  }
+  
+  
+    
+  
+  //   this.var_ReservationService.deleteReservation(res.id).subscribe({
 
-}
+      
+  //     next:(donnes_obj) => { this.reservation=this.reservation.pipe(map (data=>{
+  //       let index=data.indexOf(res);
+  //       data.slice(index,1)
+  //       return data;
+  //       }));},
+        
+     
+  //    error:(err)=>{console.log(err);}
+
+  //   })
+  }
+
 

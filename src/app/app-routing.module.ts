@@ -9,6 +9,8 @@ import { AjouterClientComponent } from './ajouter-client/ajouter-client.componen
 import { AjouterReservationComponent } from './ajouter-reservation/ajouter-reservation.component';
 
 const routes: Routes = [
+  { path: 'reservation/:id', component: ReservationComponent },
+
   { path: 'personnes', component: PersonnesComponent  },
   { path: 'personne', component: PersonneComponent },
   { path: 'produit', component: ProduitComponent },

@@ -11,7 +11,7 @@ import { ReservationService } from '../services/reservation.service';
 })
 export class AjouterReservationComponent implements OnInit {
   NewReservationFormGroup!: FormGroup;
-  reservation: Reservation = { date: '', type: 'EN_ATTENTE', finie: true };
+  reservation: Reservation = {id:8 ,date: '', type: 'EN_ATTENTE', finie: true };
 
   constructor(private fb: FormBuilder, private reservationService: ReservationService, private router: Router) { }
 

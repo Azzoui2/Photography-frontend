@@ -15,5 +15,9 @@ export class ReservationService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post(environment.backendHost + "/reservation", reservation, { headers: headers });
   }
+
+  public deleteReservation(id: number) {
+    return this.http.delete(environment.backendHost + "/reservation/" + id);
+  }
   
 }
