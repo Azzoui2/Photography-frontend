@@ -13,6 +13,7 @@ import { SpecialitesComponent } from './specialites/specialites.component';
 import { HttpClientModule } from '@angular/common/http';
  import { AjouterClientComponent } from './ajouter-client/ajouter-client.component';
 import { AjouterReservationComponent } from './ajouter-reservation/ajouter-reservation.component';
+import { NotificationComponent } from './notification/notification.component';
  
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AjouterReservationComponent } from './ajouter-reservation/ajouter-reser
     PersonnesComponent,
     SpecialitesComponent,
     AjouterClientComponent,
-    AjouterReservationComponent
+    AjouterReservationComponent,
+    NotificationComponent
      
   ],
   imports: [

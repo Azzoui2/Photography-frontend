@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Reservation } from '../model/reservation.model';
+import { Reservation, Status } from '../model/reservation.model';
 import { ReservationService } from '../services/reservation.service';
 
 @Component({
@@ -52,7 +52,19 @@ this.Http.get("http://localhost:8082/reservation").subscribe(
   }
   
   
-    
+  confermerReservation(reservation: Reservation) {
+    reservation.statut = Status.CONFIRMEE;
+        this.var_ReservationService.updateReservation(reservation).subscribe({
+      next: data => {
+        console.log('Réservation confirmée avec succès:', data);
+        // Ajoutez ici la logique pour actualiser l'affichage si nécessaire
+      },
+      error: err => {
+        console.error('Erreur lors de la confirmation de la réservation:', err);
+        // Ajoutez ici la logique pour gérer les erreurs
+      }
+    });
+  }
   
   //   this.var_ReservationService.deleteReservation(res.id).subscribe({
 

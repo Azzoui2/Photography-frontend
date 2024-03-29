@@ -3,9 +3,11 @@
       <tr>
         <th>ID</th>
         <th>Finie</th>
+        <th> adresse</th>
         <th>Admin ID</th>
         <th>Client ID</th>
         <th>Date</th>
+        <th>heure</th>
         <th>Personne ID</th>
         <th>Photographe ID</th>
         <th>Type</th>
@@ -18,13 +20,18 @@
       <tr *ngFor="let res of reservation">
         <td>{{ res.id }}</td>
         <td>{{ res.finie }}</td>
+        <td>{{ res.adresse }}</td>
         <td>{{ res.admin_id }}</td>
         <td>{{ res.client_id }}</td>
         <td>{{ res.date }}</td>
+        <td>{{ res.heure }}</td>
         <td>{{ res.personne_id }}</td>
         <td>{{ res.photographe_id }}</td>
         <td>{{ res.type }}</td>
         <td><button (click)="deleteReservation(res)">Supprimer</button></td>
+        <td> <button (click)="confermerReservation(res)">Confirmer</button>  </td>
+      
+        
       </tr>
     </tbody>
     

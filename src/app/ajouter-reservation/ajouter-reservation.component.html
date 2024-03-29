@@ -1,4 +1,46 @@
-<form [formGroup]="NewReservationFormGroup" (ngSubmit)="ajouterReservation()">
+<div class="container">
+    <div class="row justify-content-center">
+  
+    <div class="col-md-10"> 
+
+
+<div>
+    <form [formGroup]="NewReservationFormGroup" (ngSubmit)="ajouterReservation()">
+      <div class="form-group">
+        <label>Date :</label>
+        <input type="date" formControlName="date" class="form-control" id="date"  [value]="currentDate | date:'yyyy-MM-dd'" required>
+        
+      </div>
+      <div class="form-group">
+        <label>Heure :</label>
+        <input type="time" formControlName="heure" class="form-control" id="heure" required>
+        <span>{{ currentTime | date:'shortTime' }}</span>
+      </div>
+      
+      <div class="form-group">
+        <label for="adresse">Adresse :</label>
+        <input type="textarea" formControlName="adresse" class="form-control" id="adresse" required>
+    </div>
+        
+<div class="form-group">
+    <label for="type">Type de photographe :</label>
+    <select formControlName="type_photo" class="form-control" id="type_photo" required (change)="toggleAutreType()">
+        <option value="Photographe de mariage">Photographe de mariage</option>
+        <option value="Photographe de portrait">Photographe de portrait</option>
+        <option>Autre</option>
+    </select>
+    <input *ngIf="showAutreType" type="text" formControlName="autre_type_photo" class="form-control" placeholder="Saisir un autre type de photographe">
+</div>
+
+
+      <!-- Ajoutez d'autres champs pour les autres informations de la réservation -->
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<!-- <form [formGroup]="NewReservationFormGroup" (ngSubmit)="ajouterReservation()">
     <input type="date" formControlName="date" placeholder="Date">
     <select formControlName="type">
       <option value="EN_ATTENTE">En Attente</option>
@@ -7,8 +49,10 @@
     </select>
     <label><input type="checkbox" formControlName="finie"> Terminée</label>
     <!-- Ajoutez d'autres champs pour les autres informations de la réservation -->
-    <button type="submit">Ajouter Réservation</button>
-  </form>
+
+    
+    <!-- <button type="submit">Ajouter Réservation</button> -->
+  <!-- </form> --> 
   
 <!-- 
   <!DOCTYPE html>
