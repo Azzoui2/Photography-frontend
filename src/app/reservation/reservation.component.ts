@@ -56,6 +56,7 @@ this.Http.get("http://localhost:8082/reservation").subscribe(
     reservation.statut = Status.CONFIRMEE;
         this.var_ReservationService.updateReservation(reservation).subscribe({
       next: data => {
+        alert('Réservation confirmée avec succès:')
         console.log('Réservation confirmée avec succès:', data);
         // Ajoutez ici la logique pour actualiser l'affichage si nécessaire
       },

@@ -23,7 +23,7 @@ export class ReservationService {
   }
 
   updateReservation (reservation: Reservation) {
-    const url = `http://localhost:8082/reservation/${reservation.id}/confirm`;
+    const url = `http://localhost:8082/reservation/${reservation.id}`;
     return this.http.put<Reservation>(url, reservation);
   }
   
