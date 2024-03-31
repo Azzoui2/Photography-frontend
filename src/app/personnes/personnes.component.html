@@ -1,3 +1,22 @@
+<h2>Les Clients</h2>
+
+<div *ngIf="searchFormGroup">
+  <!-- pour afficher le mot-clé de recherche -->
+  {{ searchFormGroup.value | json }}
+
+  <!-- Formulaire de recherche -->
+  <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchformPersonnes()">
+    <div class="input-group">
+      <label class="input-group-text">Keyword :</label>
+      <input type="text" formControlName="keyword">
+      <button type="submit" class="btn btn-info">
+        <li class="bi bi-search"></li>
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Tableau des clients -->
 <table class="table">
   <thead>
     <tr>
@@ -17,20 +36,30 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let person of personne">
-      <td>{{ person.id }}</td>
-      <td>{{ person.nom }}</td>
-      <td>{{ person.email }}</td>
-      <td>{{ person.disponibilite }}</td>
-      <td>{{ person.date_embauche }}</td>
-      <td>{{ person.date_res }}</td>
-      <td>{{ person.dtype }}</td>
-      <td>{{ person.adresse }}</td>
-      <td>{{ person.mot_de_passe }}</td>
-      <td>{{ person.prenom }}</td>
-      <td>{{ person.role }}</td>
-      <td>{{ person.telephone }}</td>
-      <!-- Add more table cells for additional properties -->
-    </tr>
+    <!-- Vérifier si la liste des clients est vide -->
+    <ng-container *ngIf="personne && personne.length > 0; else noClients">
+      <!-- Afficher la liste des clients -->
+      <tr *ngFor="let person of personne">
+        <td>{{ person.id }}</td>
+        <td>{{ person.nom }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.disponibilite }}</td>
+        <td>{{ person.date_embauche }}</td>
+        <td>{{ person.date_res }}</td>
+        <td>{{ person.dtype }}</td>
+        <td>{{ person.adresse }}</td>
+        <td>{{ person.mot_de_passe }}</td>
+        <td>{{ person.prenom }}</td>
+        <td>{{ person.role }}</td>
+        <td>{{ person.telephone }}</td>
+        <!-- Add more table cells for additional properties -->
+      </tr>
+    </ng-container>
+    <!-- Afficher le message "Aucun client" si la liste est vide -->
+    <ng-template #noClients>
+      <tr>
+        <h3 colspan="12">Aucun client</h3>
+      </tr>
+    </ng-template>
   </tbody>
 </table>

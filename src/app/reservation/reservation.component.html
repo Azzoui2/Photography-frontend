@@ -3,6 +3,7 @@
       <tr>
         <th>ID</th>
         <th>Finie</th>
+        <th>Type</th>
         <th> adresse</th>
         <th>Admin ID</th>
         <th>Client ID</th>
@@ -20,6 +21,7 @@
       <tr *ngFor="let res of reservation">
         <td>{{ res.id }}</td>
         <td>{{ res.finie }}</td>
+        <td>{{ res.type_photo }}</td>
         <td>{{ res.adresse }}</td>
         <td>{{ res.admin_id }}</td>
         <td>{{ res.client_id }}</td>

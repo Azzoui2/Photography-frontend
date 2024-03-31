@@ -12,12 +12,23 @@ import { environment } from '../environments/environment';
 export class ClientService {
   constructor(private http: HttpClient) { }
 
+  searchPersonnes(kw:String){
+ 
+    return this.http.get(environment.backendHost+"/personnes/recherch?keyword="+kw)
+  }
+  checkEmailExists(email: string): Observable<boolean> {
+    //alert(email)
+    return   this.http.get<boolean>(`http://localhost:8082/personnes/check-email/`+ email);
+
+  }
+  
   saveClient(client: Client): Observable<Client> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
+    
     
     return this.http.post<Client>(environment.backendHost + "/personnes", client, httpOptions)
       .pipe(
