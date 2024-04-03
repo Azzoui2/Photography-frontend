@@ -14,7 +14,7 @@ import { ClientService } from '../services/client.service';
 export class PersonnesComponent implements OnInit {
   errorMessage!: string;
   searchFormGroup!: FormGroup;
-  personne!:any;
+  personne!:any ; 
   
   constructor(private http: HttpClient, private fb: FormBuilder, private var_personnesServices: ClientService) { }
 
