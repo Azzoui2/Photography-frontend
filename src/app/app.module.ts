@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
  import { AjouterClientComponent } from './ajouter-client/ajouter-client.component';
 import { AjouterReservationComponent } from './ajouter-reservation/ajouter-reservation.component';
 import { NotificationComponent } from './notification/notification.component';
+import { LoginComponent } from './login/login.component';
  
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NotificationComponent } from './notification/notification.component';
     SpecialitesComponent,
     AjouterClientComponent,
     AjouterReservationComponent,
-    NotificationComponent
+    NotificationComponent,
+    LoginComponent
      
   ],
   imports: [

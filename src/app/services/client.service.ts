@@ -38,4 +38,7 @@ export class ClientService {
         })
       );
   }
+  login(loginRequest: any): Observable<any> {
+    return this.http.post(environment.backendHost + 'login', loginRequest)
+  }
 }

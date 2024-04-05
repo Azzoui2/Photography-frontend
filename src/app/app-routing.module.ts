@@ -7,6 +7,7 @@ import { PersonnesComponent } from './personnes/personnes.component';
 import { SpecialitesComponent } from './specialites/specialites.component';
 import { AjouterClientComponent } from './ajouter-client/ajouter-client.component';
 import { AjouterReservationComponent } from './ajouter-reservation/ajouter-reservation.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'reservation/:id', component: ReservationComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'reservation', component: ReservationComponent },
   { path: 'specialites', component: SpecialitesComponent },
   { path: 'ajouter-client', component: AjouterClientComponent },
-  { path: 'ajouter-reservation', component: AjouterReservationComponent }
+  { path: 'ajouter-reservation', component: AjouterReservationComponent },
+  { path: 'login', component: LoginComponent }
 
 ];
 
