@@ -1,4 +1,7 @@
-<nav  *ngIf="isLoggedIn | async" class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Authemtification -->
+<!-- ajoute *ngIf="isLoggedIn  | async" dnas nav -->
+
+ <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
       <a class="navbar-brand" href="#">
           <img src="images/logo.png" alt="Logo" height="30">
@@ -39,20 +42,20 @@
           </form> -->
 
           <div class="navbar-text">
-            
-          
+
+
           </div>
           <div class="navbar-text">
-            
+
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/login">Login</a> 
+                    <a class="nav-link" routerLink="/login">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/register">Register</a>
                 </li>
                 </ul>
-            
+
             <!-- <a href="mailto:bonjour@.com" class="text-white">bonjour@.com</a> -->
         </div>
       </div>
